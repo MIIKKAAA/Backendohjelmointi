@@ -1,0 +1,20 @@
+package _2.car.web;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class MyController {
+	@RequestMapping("main")
+	@ResponseBody
+	public String returnMessage() {
+		return "Eka SB Sovellukseni";
+	}
+	
+	@RequestMapping("sayHello")
+	@ResponseBody
+	public String returnGreeting(@RequestParam (name="Miikka") String etunimi) {
+		return "Hei " + etunimi;
+	}
+}
